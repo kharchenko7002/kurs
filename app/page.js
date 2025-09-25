@@ -1,27 +1,26 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function Hjemm() {
   return (
-    <main className="container">
-      <h1 className="title">min portfolio</h1>
+    <main className="stor_avdeling">
+      <h1 className="tekst">min portfolio</h1>
 
-      {/* Фото */}
-      <div className="photo">
+  
+      <div className="bilde1">
         <Image
-          src="/me.jpg"   // путь внутри public/
-          alt="Моё фото"
-          width={250}     // ширина
-          height={250}    // высота
-          className="profile-pic"
+          src="/jeg.jpg"
+          width={250}     
+          height={250}    
+          className="bilde22"
         />
       </div>
 
-      {/* Карточки */}
-      <div className="cards">
-        <div className="card">Mine prosjekter</div>
-        <div className="card">Min CV</div>
-        <div className="card">Min utdanning</div>
-        <div className="card">Min arbeidserfaring</div>
+
+      <div className="avdelinger">
+        <Link href='./arbeidserfaring' className="avdeling">Mine prosjekter</Link>
+        <Link href='./cv' className="avdeling">Min CV</Link>
+        <Link href='./prosjekter' className="avdeling">Min arbeidserfaring</Link>
       </div>
     </main>
   );

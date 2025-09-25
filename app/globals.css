@@ -16,7 +16,7 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.logo {
+.portfolio_tekst {
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -24,7 +24,7 @@ body {
 }
 
 
-.content {
+.bla_bla_bla {
   max-width: 900px;
   margin: 40px auto;
   padding: 0 20px;
@@ -32,7 +32,7 @@ body {
 }
 
 
-.container {
+.stor_avdeling {
   display: flex;
   flex-direction: column;
   justify-content: center; 
@@ -40,13 +40,13 @@ body {
   min-height: 100vh;       
 }
 
-.title {
+.tekst {
   font-size: 2.5rem;
   margin-bottom: 40px;
   text-align: center;
 }
 
-.cards {
+.avdelinger {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
@@ -54,7 +54,7 @@ body {
   max-width: 800px;
 }
 
-.card {
+.avdeling {
   background: white;
   padding: 20px;
   border-radius: 15px; 
@@ -65,17 +65,18 @@ body {
   cursor: pointer;
 }
 
-.card:hover {
+.avdeling:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-.photo {
+.bilde1 {
   margin-bottom: 30px;
 }
 
-.profile-pic {
+.bilde22 {
   border-radius: 50%;   
   object-fit: cover;    
   box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
 }
+
