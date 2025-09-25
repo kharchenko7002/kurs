@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   margin: 0;
@@ -9,11 +12,33 @@ body {
 
 
 .header {
-  text-align: center;
-  padding: 30px 0;
-  background: #0f172a;
-  color: white;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffff;
+  padding: 1 rem 3 rem;
+}
+
+
+@media(min-width: 800px)
+{
+  .header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ul_nav{
+    display: flex;
+  }
+}
+
+.Kostiantyn{
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+
 }
 
 .portfolio_tekst {
