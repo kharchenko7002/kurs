@@ -1,20 +1,30 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Header from '../components/header.js'
+import Header from "../components/header/header.js"; 
+import Footer from "../components/footer/footer.js";
 
 const poppins = Poppins({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
 
-export default function Generelt({ children }) {
+export const metadata = {
+  title: "Frivillig",
+  description: "Røde Kors - frivillig arbeid",
+};
+
+export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="no">
       <body className={poppins.className}>
-        <Header className='header'/>
-        <main className="bla_bla_bla">
-          {children}
-        </main>
+        {/* Хедер */}
+        <Header />
+
+        {/* Контент страниц */}
+        <main className="bla_bla_bla pt-24">{children}</main>
+
+        {/* Футер (обязательно внутри body) */}
+        <Footer />
       </body>
     </html>
   );
