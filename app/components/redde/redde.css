@@ -1,0 +1,93 @@
+.redde {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+
+.redde-img {
+  border-radius: 12px;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+
+.redde-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  gap: 1rem;
+  text-align: center;    
+}
+
+.redde-right h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0.5rem 0;
+}
+
+/* Красная кнопка — наклон */
+.redde-button {
+  background-color: #d1001c;
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  display: inline-block;
+  transform: rotate(-5deg);
+  margin: 1rem 0;
+}
+
+.redde-button:hover {
+  background-color: #b80018;
+  transform: rotate(-5deg) scale(1.05); /* лёгкий эффект увеличения */
+}
+
+/* Белый контейнер под баннер */
+.redde-banner {
+  background: #fff;
+  border-radius: 50px 50px 0 0;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  margin-left: -100px; /* 👈 делает нахлёст на фото */
+  margin-top: 1rem;
+}
+
+.redde-banner-img {
+  width: 100%;
+  height: auto;
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .redde {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .redde-right {
+    align-items: center;
+  }
+
+  .redde-button {
+    transform: rotate(0deg); /* убираем наклон на мобилке */
+  }
+
+  .redde-banner {
+    border-radius: 30px;
+    margin-left: 0; /* на мобилке без нахлёста */
+    padding: 1rem;
+  }
+}

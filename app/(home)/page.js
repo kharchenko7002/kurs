@@ -1,27 +1,18 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
-export default function Hjemm() {
+import Redde from "../components/redde/redde.js";
+import Cards from "../components/cards/cards.js";
+import Intro from "../components/intro/intro.js";
+import "./globals.css";
+
+export default function HomePage() {
   return (
-    <main className="stor_avdeling">
-      <h1 className="tekst">min portfolio</h1>
+    <main>
 
-  
-      <div className="bilde1">
-        <Image
-          src="/jeg.jpg"
-          width={250}     
-          height={250}    
-          className="bilde22"
-        />
-      </div>
+      <Redde />
+      <Intro/>
+      <Cards />
 
-
-      <div className="avdelinger">
-        <Link href='./arbeidserfaring' className="avdeling">Mine prosjekter</Link>
-        <Link href='./cv' className="avdeling">Min CV</Link>
-        <Link href='./prosjekter' className="avdeling">Min arbeidserfaring</Link>
-      </div>
     </main>
   );
 }

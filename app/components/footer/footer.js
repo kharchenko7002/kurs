@@ -9,7 +9,6 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-container">
 
-        {/* Левая колонка */}
         <div className="footer-column">
           <h3>Støtt vårt arbeid</h3>
           <p>
@@ -23,14 +22,14 @@ export default function Footer() {
             <li><Link href="/stott-arbeidet">Støtt arbeidet</Link></li>
           </ul>
 
-          {/* Поиск */}
+
           <div className="footer-search">
             <input type="text" placeholder="Søk" />
             <button>🔍</button>
           </div>
         </div>
 
-        {/* Средняя колонка */}
+
         <div className="footer-column">
           <h3>Kontakt</h3>
           <p><strong>Telefonnummer</strong><br/>22 05 40 00</p>
@@ -51,12 +50,12 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Нижняя часть с логотипом */}
+
       <div className="footer-bottom">
         <Image
           src="/logo.png"
           alt="Røde Kors"
-          width={40}
+          width={120}
           height={40}
         />
         <span className="footer-logo-text">Røde Kors</span>
