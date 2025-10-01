@@ -1,7 +1,7 @@
 .redde {
   display: grid;
   grid-template-columns: 55% 45%;
-  align-items: center;
+ align-items: end; 
   gap: 2rem;
   margin-bottom: 4rem;
 }

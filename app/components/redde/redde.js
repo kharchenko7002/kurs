@@ -20,7 +20,6 @@ export default function Redde() {
 
       <div className="redde-right">
         <Image src="/logostor.png" alt="Røde Kors logo" width={190} height={190} />
-        <h1>Røde Kors</h1>
         <Link href="/bli-frivillig" className="redde-button">
           Bli med oss for å hjelpe mennesker
         </Link>
