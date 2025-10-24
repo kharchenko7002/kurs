@@ -1,18 +1,20 @@
 import { Poppins } from "next/font/google";
-import "./(home)/globals.css";
-import Header from "./components/header/header.js";
-import Footer from "./components/footer/footer.js";
+import "./(undersider)/(home)/globals.css";
+import Header from "./components/footerHeader/header/header.js";
+import Footer from "./components/footerHeader/footer/footer.js";
 
-const poppins = Poppins({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  display: "swap", 
-});
 
 export const metadata = {
   title: "Røde Kors",
   description: "Frivillig arbeid - Røde Kors",
 };
+
+
+const poppins = Poppins({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function RootLayout({ children }) {
   return (
