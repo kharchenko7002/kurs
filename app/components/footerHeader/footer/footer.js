@@ -15,10 +15,10 @@ export default function Footer() {
             Din støtte gjør vårt arbeid mulig. Støtt oss, og vær med å gjøre en forskjell.
           </p>
           <ul className="rk-links">
-            <li><Link className="rk-link" href="/kontaktOss">Kontakt Oss</Link></li>
-            <li><Link className="rk-link" href="/bli-frivillig">Bli frivillig</Link></li>
-            <li><Link className="rk-link" href="/vart-arbeid">Vårt arbeid</Link></li>
-            <li><Link className="rk-link rk-link--cta" href="/stott-arbeidet">Støtt arbeidet</Link></li>
+            <li><Link className="rk-link" href="/omOss">Kontakt Oss</Link></li>
+            <li><Link className="rk-link" href="/bliFrivillig">Bli frivillig</Link></li>
+            <li><Link className="rk-link" href="/vartArbeid">Vårt arbeid</Link></li>
+            <li><Link className="rk-link rk-link--cta" href="/stottArbeidet">Støtt arbeidet</Link></li>
           </ul>
 
           <div className="rk-search">
@@ -38,23 +38,16 @@ export default function Footer() {
         <div className="rk-col">
           <h3 className="rk-title">Sosiale medier</h3>
           <ul className="rk-social">
-            <li><a className="rk-social-link" href="#"><span>📘</span> Facebook</a></li>
-            <li><a className="rk-social-link" href="#"><span>📸</span> Instagram</a></li>
-            <li><a className="rk-social-link" href="#"><span>🐦</span> Twitter</a></li>
-            <li><a className="rk-social-link" href="#"><span>▶</span> YouTube</a></li>
+            <li><a className="rk-social-link" href="https://www.facebook.com/HedmarkRodeKors/"><span>📘</span> Facebook</a></li>
+            <li><a className="rk-social-link" href="https://www.instagram.com/rodekorsnorge/"><span>📸</span> Instagram</a></li>
+            <li><a className="rk-social-link" href="https://x.com/rodekorsnorge"><span>🐦</span> Twitter</a></li>
+            <li><a className="rk-social-link" href="https://www.youtube.com/@rodekorsnorge/featured"><span>▶</span> YouTube</a></li>
           </ul>
         </div>
       </div>
 
       <div className="rk-footer-bottom">
         <div className="rk-brand">
-          <Image
-            src="/footerHeader/logo.png"
-            alt="Røde Kors"
-            width={120}
-            height={40}
-            priority
-          />
           <span className="rk-brand-text">Røde Kors</span>
         </div>
         <p className="rk-copy">© {new Date().getFullYear()} Røde Kors. Alle rettigheter forbeholdt.</p>

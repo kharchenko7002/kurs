@@ -60,7 +60,7 @@ export default function Header() {
 
       <div className={`rk-drawer ${open ? "rk-drawer--open" : ""}`} aria-hidden={!open}>
         <div className="rk-drawer-inner">
-          <Link className={`rk-drawer-link ${pathname === "/kontaktOss" ? "is-active" : ""}`} href="/kontaktOss">kontaktOss</Link>
+          <Link className={`rk-drawer-link ${pathname === "/kontaktOss" ? "is-active" : ""}`} href="/kontaktOss">Kontakt Oss</Link>
           <Link className={`rk-drawer-link ${pathname === "/bliFrivillig" ? "is-active" : ""}`} href="/bliFrivillig">Bli frivillig</Link>
           <Link className={`rk-drawer-link ${pathname === "/vartArbeid" ? "is-active" : ""}`} href="/vartArbeid">Vårt arbeid</Link>
           <Link className="rk-drawer-cta" href="/stottArbeidet">Støtt arbeidet</Link>

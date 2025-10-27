@@ -5,7 +5,7 @@ export default function DonationPage() {
   return (
     <main className="donate">
       <DonateHero
-        image="/bilderForUndersider/home/redde/redde.png"
+        image="/bilderForUndersider/stottArbeidet/1.jpg"
         title="Hjelp jenter og kvinner i krig og nød"
         subtitle="Som fast giver gir du håp, trygghet og en bedre fremtid for jenter og kvinner i hele verden."
       />
