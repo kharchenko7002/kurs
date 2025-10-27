@@ -1,93 +1,200 @@
-.redde {
+:root{
+  --rk-red:#c8102e;
+  --rk-red-600:#a50d26;
+  --ink:#0f172a;
+  --muted:#64748b;
+}
+
+
+.redde{
+  position: relative;
   display: grid;
   grid-template-columns: 55% 45%;
- align-items: end; 
+  align-items: end;
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin: 2rem auto 4rem;
+  max-width: 1200px;
+  padding: 0 16px;
+  isolation: isolate;
+}
+.redde-bg{
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 420px;
+  z-index: -1;
+  background:
+    radial-gradient(600px 260px at 10% 10%, rgba(200,16,46,.18), transparent 60%),
+    radial-gradient(500px 220px at 90% 20%, rgba(200,16,46,.10), transparent 60%);
+  filter: saturate(120%);
+  pointer-events: none;
 }
 
 
-.redde-img {
-  border-radius: 12px;
-  object-fit: cover;
+.redde-left{ min-height: 420px; display: grid; align-items: end; }
+.redde-photo{
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(15,17,21,.18);
+  transform-style: preserve-3d;
+  transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
+}
+.redde-left:hover .redde-photo{
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 42px 80px rgba(15,17,21,.26);
+}
+.redde-img{
   width: 100%;
   height: auto;
+  display: block;
+  transform: translateZ(0);
+  transition: transform .6s ease;
+}
+.redde-left:hover .redde-img{
+  transform: scale(1.04);
+}
+
+.redde-photo::after{
+  content:"";
+  position:absolute; inset:0;
+  background: radial-gradient(50% 70% at 60% 40%, rgba(200,16,46,.0), rgba(200,16,46,.20) 70%);
+  opacity: 0; transition: opacity .35s ease;
+  mix-blend-mode: multiply;
+}
+.redde-left:hover .redde-photo::after{ opacity: 1 }
+
+
+.redde-chip{
+  position: absolute;
+  left: 14px; top: 14px;
+  background: rgba(255,255,255,.92);
+  color: var(--rk-red);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: .2px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.16);
+  animation: chipFloat 6s ease-in-out infinite;
+}
+@keyframes chipFloat{
+  0%,100%{ transform: translateY(0) }
+  50%{ transform: translateY(-4px) }
 }
 
 
-.redde-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;   
+.redde-right{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
   gap: 1rem;
-  text-align: center;    
+  text-align:center;
 }
 
-.redde-right h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #111;
-  margin: 0.5rem 0;
+
+.redde-logo-wrap{
+  position: relative;
+  display: grid; place-items:center;
+}
+.redde-logo{
+  display:block;
+  filter: drop-shadow(0 0 0 rgba(200,16,46,0));
+  transform: translateZ(0) scale(1);
+  transition: transform .35s ease, filter .35s ease;
+}
+.redde-logo-wrap::after{
+  content:"";
+  position:absolute; inset:-18px;
+  border-radius: 22px;
+  background: radial-gradient(80px 80px at 50% 50%, rgba(200,16,46,.18), transparent);
+  opacity: .0; transition: opacity .35s ease;
+  pointer-events:none;
+}
+.redde-logo-wrap:hover .redde-logo{
+  transform: scale(1.06);
+  filter: drop-shadow(0 8px 22px rgba(200,16,46,.45));
+}
+.redde-logo-wrap:hover::after{ opacity: 1 }
+
+
+.redde-ribbon{
+  position: relative;
+  display:inline-flex; align-items:center; justify-content:center;
+  transform: rotate(-6deg);
+  background: var(--rk-red);
+  color:#fff;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration:none;
+  font-weight: 900;
+  letter-spacing: .2px;
+  box-shadow: 0 14px 28px rgba(200,16,46,.30);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  will-change: transform;
+}
+.redde-ribbon:hover{
+  transform: rotate(-6deg) translateY(-2px) scale(1.03);
+  background: var(--rk-red-600);
+  box-shadow: 0 20px 36px rgba(200,16,46,.38);
 }
 
-/* Красная кнопка — наклон */
-.redde-button {
-  background-color: #d1001c;
-  color: #fff;
-  padding: 0.8rem 1.8rem;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-  display: inline-block;
-  transform: rotate(-5deg);
-  margin: 1rem 0;
+.ribbon-shine{
+  position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background: linear-gradient(100deg, transparent 20%, rgba(255,255,255,.45) 50%, transparent 80%);
+  transform: translateX(-120%) rotate(-6deg);
+  transition: transform .6s ease;
 }
+.redde-ribbon:hover .ribbon-shine{ transform: translateX(120%) rotate(-6deg) }
 
-.redde-button:hover {
-  background-color: #b80018;
-  transform: rotate(-5deg) scale(1.05); /* лёгкий эффект увеличения */
+@keyframes breathe{
+  0%,100%{ transform: rotate(-6deg) translateY(0) }
+  50%{ transform: rotate(-6deg) translateY(-2px) }
 }
+.redde-ribbon{ animation: breathe 5s ease-in-out infinite }
 
-/* Белый контейнер под баннер */
-.redde-banner {
+
+.redde-banner{
+  position: relative;
+  width: 100%;
+  max-width: 720px;
   background: #fff;
-  border-radius: 50px 50px 0 0;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 650px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 44px 44px 16px 16px;
+  padding: 16px 22px;
+  margin-top: 8px;
+  margin-left: clamp(-120px,-8vw,-80px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.10);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.redde-banner::before{
+  content:"";
+  position:absolute; inset:-2px;
+  border-radius: inherit;
+  background: radial-gradient(120px 40px at 50% 100%, rgba(200,16,46,.22), transparent 70%);
+  opacity: .0; transition: opacity .35s ease;
+  pointer-events:none;
+}
+.redde-banner:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 26px 70px rgba(0,0,0,.18);
+}
+.redde-banner:hover::before{ opacity: 1 }
+.redde-banner-img{ width:100%; height:auto; display:block }
 
-  margin-left: -100px; /* 👈 делает нахлёст на фото */
-  margin-top: 1rem;
+
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;
 }
 
-.redde-banner-img {
-  width: 100%;
-  height: auto;
+
+@media (max-width: 1000px){
+  .redde{ grid-template-columns: 1fr; align-items: start }
+  .redde-banner{ margin-left: 0; border-radius: 30px }
+  .redde-ribbon{ transform: none; animation: none }
+  .ribbon-shine{ transform: translateX(-120%) }
+  .redde-ribbon:hover .ribbon-shine{ transform: translateX(120%) }
 }
 
-/* Адаптив */
-@media (max-width: 900px) {
-  .redde {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
 
-  .redde-right {
-    align-items: center;
-  }
-
-  .redde-button {
-    transform: rotate(0deg); /* убираем наклон на мобилке */
-  }
-
-  .redde-banner {
-    border-radius: 30px;
-    margin-left: 0; /* на мобилке без нахлёста */
-    padding: 1rem;
-  }
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important }
 }

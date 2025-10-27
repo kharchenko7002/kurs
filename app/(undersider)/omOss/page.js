@@ -1,4 +1,5 @@
-import "./om_oss.css"; 
+//import "@/app/globals.css"; 
+import './style.css'; 
 
 
 import HeroSection from "../../components/componentsForUndersider/omOss/HeroSection/HeroSection.js";

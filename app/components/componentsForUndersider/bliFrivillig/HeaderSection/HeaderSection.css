@@ -1,0 +1,68 @@
+/* Общий блок */
+.header {
+  background-color: #c8102e;
+  color: #fff;
+  padding: 80px 0;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Текст */
+.header-brand {
+  text-transform: uppercase;
+  opacity: 0.9;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.header-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.header-lead {
+  max-width: 600px;
+  font-size: 18px;
+  margin-top: 15px;
+  opacity: 0.95;
+}
+
+/* Кнопки */
+.header-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  color: #c8102e;
+}
+
+.btn-primary:hover {
+  background-color: #f4f4f4;
+}
+
+.btn-secondary {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,79 @@
+.sitater-section {
+  padding: 72px 0;
+  background:
+    radial-gradient(900px 420px at 0% 0%, rgba(200,16,46,.05), transparent 60%),
+    #ffffff;
+}
+
+.sitater-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sitater-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 28px;
+}
+
+.sitater-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 640px) {
+  .sitater-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .sitater-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.sitat-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e8eaee;
+  border-radius: 16px;
+  padding: 22px 20px 18px 20px;
+  box-shadow: 0 8px 26px rgba(15,17,21,.06);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+  opacity: 0;
+  transform: translateY(12px) scale(.98);
+}
+.sitat-card.in {
+  opacity: 1;
+  transform: none;
+  transition-delay: .05s;
+}
+
+.sitat-card:hover {
+  transform: translateY(-6px);
+  border-color: #f3c2c9;
+  box-shadow: 0 18px 46px rgba(200,16,46,.18);
+  background: linear-gradient(180deg, #ffffff 0%, #fff5f6 100%);
+}
+
+.sitat-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #ffe7ea;
+  color: #c8102e;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.sitat-text {
+  margin: 10px 0 8px;
+  color: #0f172a;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.sitat-name {
+  color: #475569;
+  font-size: 14px;
+}

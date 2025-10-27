@@ -1,84 +1,213 @@
-/* Общий контейнер */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 2rem;
-  background-color: #ffffff;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+:root{
+  --rk-red:#c8102e;
+  --rk-red-600:#a50d26;
+  --text:#0f172a;
+  --muted:#475569;
+  --glass:rgba(255,255,255,.7);
+  --ring:0 0 0 4px rgba(200,16,46,.14);
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --glass:rgba(20,22,28,.65);
+    --text:#e5e7eb;
+    --muted:#9ca3af;
+  }
+}
+
+.rk-header{
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 60;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 20px;
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  background: linear-gradient(180deg,var(--glass),rgba(255,255,255,.45));
+  border-bottom: 1px solid rgba(15,17,21,.06);
+  transition: box-shadow .25s ease, transform .25s ease, background .25s ease, border-color .25s ease;
+  animation: headerReveal .5s ease both;
 }
 
-/* Логотип */
-.logo {
+
+.rk-nav-link:hover,
+.rk-nav-link:focus,
+.rk-nav-link:active {
+  text-decoration: none;
+}
+
+
+.rk-header--scrolled{
+  box-shadow: 0 10px 30px rgba(15,17,21,.08);
+  transform: translateY(-1px);
+  background: linear-gradient(180deg,var(--glass),rgba(255,255,255,.6));
+  border-color: rgba(15,17,21,.08);
+}
+
+@keyframes headerReveal{
+  from{ opacity:0; transform: translateY(-12px) }
+  to{ opacity:1; transform: translateY(0) }
+}
+
+.rk-logo{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.rk-logo-wrap{
+  display:inline-grid; place-items:center;
+  width: 120px; height: 40px;
+}
+.rk-logo-text{
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -.2px;
+  color: var(--rk-red);
+}
+
+.rk-nav{
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 24px;
+  justify-self: start;
+  margin-left: 8px;
+}
+.rk-nav-link{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   text-decoration: none;
-}
-
-.logo-text {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #d1001c; /* фирменный красный */
-  letter-spacing: -0.5px;
-}
-
-/* Навигация */
-.nav {
-  display: flex;
-  gap: 2rem; /* расстояние между ссылками */
-  margin-left: 2rem; /* небольшой отступ от логотипа */
-}
-
-/* Ссылки */
-.nav a {
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  color: #333;
-  transition: color 0.2s ease;
-}
-
-.nav a:hover {
-  color: #d1001c;
-}
-
-/* Красная кнопка */
-.button {
-  margin-left: 2rem; /* отступ от навигации */
-  background-color: #d1001c;
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 9999px;
+  color: var(--text);
   font-weight: 600;
+  padding: 8px 2px 4px;
+  transition: color .2s ease, transform .2s ease;
+}
+.rk-nav-link:hover{ color: var(--rk-red) }
+.rk-nav-link.is-active{ color: var(--rk-red) }
+
+.rk-underline{
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--rk-red), transparent);
+  transform: scaleX(0);
+  transform-origin: 50% 50%;
+  transition: transform .25s ease;
+}
+.rk-nav-link:hover .rk-underline,
+.rk-nav-link.is-active .rk-underline{
+  transform: scaleX(1);
+}
+
+.rk-cta{
+  justify-self: end;
   text-decoration: none;
-  transition: background-color 0.2s ease;
+  color: #fff;
+  background: var(--rk-red);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  box-shadow: 0 10px 22px rgba(200,16,46,.25);
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
 }
+.rk-cta:hover{ background: var(--rk-red-600); transform: translateY(-2px); box-shadow: 0 16px 28px rgba(200,16,46,.32) }
+.rk-cta:focus-visible{ outline: none; box-shadow: var(--ring) }
 
-.button:hover {
-  background-color: #b80018;
-}
-
-/* Иконка меню (мобилка) */
-.menu-toggle {
-  font-size: 1.5rem;
-  cursor: pointer;
+.rk-burger{
   display: none;
+  width: 44px; height: 40px;
+  border: 0;
+  background: transparent;
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.rk-burger:hover{ background: rgba(15,17,21,.06) }
+.rk-burger:focus-visible{ outline: none; box-shadow: var(--ring) }
+.rk-burger span{
+  position: absolute; left: 10px; right: 10px; height: 2px; background: var(--text);
+  transition: transform .25s ease, opacity .2s ease, top .25s ease;
+}
+.rk-burger span:nth-child(1){ top: 12px }
+.rk-burger span:nth-child(2){ top: 19px }
+.rk-burger span:nth-child(3){ top: 26px }
+
+/* Drawer */
+.rk-drawer{
+  position: fixed;
+  inset: 0;
+  background: rgba(15,17,21,.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 50;
+}
+.rk-drawer--open{
+  opacity: 1;
+  pointer-events: auto;
+}
+.rk-drawer-inner{
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: min(90vw, 360px);
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(15,17,21,.06);
+  box-shadow: -12px 0 40px rgba(15,17,21,.18);
+  transform: translateX(12px);
+  opacity: 0;
+  animation: drawerIn .28s cubic-bezier(.2,.8,.2,1) forwards;
+  padding: 20px;
+  display: grid;
+  gap: 8px;
+}
+@keyframes drawerIn{
+  to{ transform: none; opacity: 1 }
+}
+.rk-drawer-link{
+  display: block;
+  padding: 14px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  transition: background .15s ease, color .15s ease, transform .15s ease;
+}
+.rk-drawer-link:hover{ background: rgba(200,16,46,.08); transform: translateX(2px) }
+.rk-drawer-link.is-active{ color: var(--rk-red) }
+.rk-drawer-cta{
+  margin-top: 8px;
+  background: var(--rk-red);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 800;
+  padding: 12px 14px;
+  text-align: center;
+  box-shadow: 0 10px 22px rgba(200,16,46,.25);
+  transition: transform .2s ease, background .2s ease;
+}
+.rk-drawer-cta:hover{ background: var(--rk-red-600); transform: translateY(-1px) }
+
+/* Layout tweaks */
+@media (max-width: 1024px){
+  .rk-nav{ display: none }
+  .rk-cta{ display: none }
+  .rk-burger{ display: inline-block }
+  .rk-header{ grid-template-columns: auto 1fr auto }
 }
 
-/* Адаптив */
-@media (max-width: 768px) {
-  .nav {
-    display: none;
-  }
-  .button {
-    display: none;
-  }
-  .menu-toggle {
-    display: block;
-  }
+/* Motion safety */
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important }
 }
+
+
