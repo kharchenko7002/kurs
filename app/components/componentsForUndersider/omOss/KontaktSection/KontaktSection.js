@@ -1,5 +1,5 @@
 import Kundeservice from "../Kundeservice/Kundeservice.js";
-import KontaktInfo from "../Kontaktinfo/KontaktInfo.js";
+import KontaktInfo from '../KontaktInfo/KontaktInfo';
 
 export default function KontaktSection() {
   return (
